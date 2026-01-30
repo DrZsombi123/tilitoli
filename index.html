@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tili-Toli Játék</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="game-container glass-panel">
+        <header class="game-header">
+            <h1>Tili-Toli</h1>
+            <p class="subtitle">Rendezd sorba a számokat!</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-label">Lépések</span>
+                <span class="stat-value" id="move-count">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Idő</span>
+                <span class="stat-value" id="timer">00:00</span>
+            </div>
+        </div>
+
+        <div class="game-board" id="game-board">
+            <!-- Tiles will be generated here -->
+        </div>
+
+        <div class="controls">
+            <div class="size-selector">
+                <button class="size-btn" data-size="3">3x3</button>
+                <button class="size-btn active" data-size="4">4x4</button>
+                <button class="size-btn" data-size="5">5x5</button>
+            </div>
+            <div class="file-input-container">
+                <label for="image-upload" class="file-label">Kép Feltöltése</label>
+                <input type="file" id="image-upload" accept="image/*" class="file-input">
+                <button id="remove-image-btn" class="icon-btn hidden" title="Kép eltávolítása">❌</button>
+            </div>
+            <button id="new-game-btn" class="primary-btn">Új Játék</button>
+        </div>
+    </main>
+
+    <!-- Win Modal -->
+    <div id="win-modal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <h2>Gratulálok! 🎉</h2>
+            <p>Sikeresen kiraktad a kirakóst!</p>
+            <div class="final-stats">
+                <p>Idő: <span id="final-time">00:00</span></p>
+                <p>Lépések: <span id="final-moves">0</span></p>
+            </div>
+            <button id="modal-close-btn" class="primary-btn">Bezárás</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
